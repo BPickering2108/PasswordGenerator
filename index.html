@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        input[type="checkbox"] { margin: 5px; }
+        #password { font-size: 18px; padding: 10px; border: 1px solid #ccc; width: 300px; text-align: center; }
+        #copyBtn, #revealBtn { margin-top: 10px; cursor: pointer; padding: 5px; }
+    </style>
+</head>
+<body>
+
+    <h2>Random Password Generator</h2>
+
+    <label for="length">Password Length:</label>
+    <input type="range" id="length" min="8" max="32" value="12">
+    <span id="lengthValue">12</span>
+
+    <br><br>
+    <label><input type="checkbox" id="useSymbols" checked> Include Symbols</label>
+    <label><input type="checkbox" id="useNumbers" checked> Include Numbers</label>
+    <br><br>
+    <label for="excludeChars">Exclude Characters:</label>
+    <input type="text" id="excludeChars" placeholder="e.g., !@#$">
+
+    <br><br>
+    <button id="generateBtn">Generate Password</button>
+
+    <br><br>
+    <input type="text" id="password" readonly>
+    
+    <br><br>
+    <button id="copyBtn">Copy</button>
+    <button id="revealBtn">Reveal</button>
+
+    <script src="script.js"></script>
+    <br><br>
+
+</body>
+<footer>
+    <p>Copyright <span id="year"></span> - Bradley Pickering</p>
+</footer>
+</html>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
