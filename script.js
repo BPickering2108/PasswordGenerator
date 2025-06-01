@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const numbers = useNumbers.checked;
         const excludeChars = document.getElementById("excludeChars").value;
     
-        fetch(`/generate?length=${length}&use_symbols=${symbols}&use_numbers=${numbers}&exclude_chars=${encodeURIComponent(excludeChars)}`)
+        fetch(`https://password.pickering.cloud/generate?length=${length}&use_symbols=${symbols}&use_numbers=${numbers}&exclude_chars=${encodeURIComponent(excludeChars)}`)
             .then(response => response.json())
             .then(data => {
                 passwordField.value = "*".repeat(length);
