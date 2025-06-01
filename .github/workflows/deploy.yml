@@ -25,8 +25,9 @@ jobs:
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'password-generator-app'
+        app-name: 'PasswordGenerator'
         publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+
     - name: Set Startup Command
       run: |
         az webapp config set --name PasswordGenerator --resource-group uk-pr-passwordgenerator --startup-file "gunicorn -w 4 -b 0.0.0.0:8000 app:app"
