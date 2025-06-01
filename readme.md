@@ -33,6 +33,8 @@ GET https://password.pickering.cloud/generate?length=16&use_symbols=true&use_num
 #### **Response Example**
 ```json
 { "password": "aSd8LkPqRm2X" }
+```
+---
 
 ## To-Do:
 - [] GitHub actions to automatically push to Azure
