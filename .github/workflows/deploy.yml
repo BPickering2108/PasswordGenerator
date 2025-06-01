@@ -1,0 +1,32 @@
+name: Deploy to Azure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Deploy to Azure
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'password-generator-app'
+        publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+    - name: Set Startup Command
+      run: |
+        az webapp config set --name PasswordGenerator --resource-group uk-pr-passwordgenerator --startup-file "gunicorn -w 4 -b 0.0.0.0:8000 app:app"
