@@ -37,6 +37,6 @@ GET https://password.pickering.cloud/generate?length=16&use_symbols=true&use_num
 ---
 
 ## To-Do:
-- [] GitHub actions to automatically push to Azure
+- [~] GitHub actions to automatically push to Azure
 - [] API Rate-Limiting
 - [] Dark mode toggle
