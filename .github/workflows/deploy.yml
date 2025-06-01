@@ -25,6 +25,8 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r requirements.txt
+        pip freeze > installed_packages.txt
+
 
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
